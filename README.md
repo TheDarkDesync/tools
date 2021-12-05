@@ -1,4 +1,4 @@
 # Tools
 
 ## SpongeText
-Formates the text from your clipboard in alternating upper and lowercase.
+Formats the text from your clipboard in alternating upper and lowercase.
