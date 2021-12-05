@@ -1,4 +1,4 @@
 # Ignore Executable Folder
 /executable
 
-.bak
+.gitignore.bak
