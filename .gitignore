@@ -1,0 +1,4 @@
+# Ignore Executable Folder
+/executable
+
+.bak
