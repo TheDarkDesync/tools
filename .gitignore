@@ -4,3 +4,5 @@
 .gitignore.bak
 
 .pdf
+
+__pycache__/
