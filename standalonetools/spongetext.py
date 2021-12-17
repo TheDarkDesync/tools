@@ -1,4 +1,3 @@
-# from tkinter import Tk
 import win32clipboard
 
 win32clipboard.OpenClipboard()
@@ -8,7 +7,6 @@ except TypeError:
     text = " "
 win32clipboard.CloseClipboard()
 
-# spongeText = []
 idx = 1
 for i in range(len(text)):
     if text[i].isalpha():
@@ -17,8 +15,6 @@ for i in range(len(text)):
         else:
             text[i] = text[i].lower()
         idx += 1
-
-print("".join(text))
 
 win32clipboard.OpenClipboard()
 win32clipboard.EmptyClipboard()
