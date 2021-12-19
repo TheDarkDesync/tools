@@ -1,6 +1,6 @@
 from pikepdf import Pdf
 from tkinter import Tk
-from tkinter.filedialog import askdirectory, askopenfilenames
+from tkinter.filedialog import askdirectory, askopenfilenames, asksaveasfilename
 import sys
 
 # Select PDFs from files & check 
@@ -27,12 +27,11 @@ def mergePdfs(pdfFilenames):
     return mergedPdf, mergedName
 
 # Save PDF to selected directory
-def savePdf(pdf, name): 
-    saveLoc = askdirectory()
-    pdf.save("{dir}/{name}.pdf".format(dir=saveLoc, name = name))
-
+def savePdf(pdf): 
+    saveNameLoc = asksaveasfilename(defaultextension=".pdf")
+    pdf.save(saveNameLoc)
 
 if __name__ == "__main__":
     pdfs = selectFiles()
     mergedPdf, name = mergePdfs(pdfs)
-    savePdf(mergedPdf, name)
+    savePdf(mergedPdf)
