@@ -14,7 +14,6 @@ def selectPdfs():
         
     return pdfFilenames
 
-
 # Merge PDFs into a single PDF
 def mergePdfs(pdfFilenames):
     mergedPdf = Pdf.new()
