@@ -4,7 +4,7 @@ from tkinter.filedialog import askdirectory, askopenfilenames
 from PIL import Image
 
 # Select imgs from files & check 
-def selectFiles():
+def selectImages():
     Tk().withdraw()
     imgFilenames = askopenfilenames(title="Select the image(s) you want to convert to PDF", filetypes=[("image", ".jpeg"),("image", ".png"),("image", ".jpg")])
 
@@ -22,7 +22,7 @@ def imgToPdf(imgFilename, saveLoc):
     imgConv.save(r"{dir}/{imgname}.pdf".format(dir=saveLoc, imgname=name))
     
 if __name__ == "__main__":
-    imgFilenames = selectFiles()
+    imgFilenames = selectImages()
     saveLoc = askdirectory(title="Select the save location of the PDF(s)")
     for imgFilename in imgFilenames:
         imgToPdf(imgFilename, saveLoc)
