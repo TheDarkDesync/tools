@@ -10,8 +10,10 @@ Merges the selected PDFs and saves the merged PDF to your desired location.
 Splits the selected PDF into the individual pages as PDFs and saves them to your desired location.
 
 ## Image to PDF
-Converts images to PDFs and saves them to your desired location.
+Converts selected images to PDFs and saves them to your desired location.
 
+## Extract Images from PDF
+Extracts all images from the selected PDF and saves them to your desired location.
 ## Build
 - Install [Python](https://www.python.org/downloads/) and [PyInstaller](https://www.pyinstaller.org/)
 - Open cmd or PowerShell and go to the location where the executable should be created
