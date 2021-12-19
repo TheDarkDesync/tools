@@ -10,7 +10,7 @@ def selectFiles():
 
     # Exit if only one PDF is selected
     if len(pdfFilenames) < 2:
-        sys.exit("You selected only one PDF... Can not merge")
+        sys.exit("You have only selected one PDF... Can not merge")
         
     return pdfFilenames
 
