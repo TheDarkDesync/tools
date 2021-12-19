@@ -6,7 +6,7 @@ import sys
 # Select PDFs from files & check 
 def selectFiles():
     Tk().withdraw()
-    pdfFilenames = askopenfilenames(filetypes=[("PDFs", "*.pdf")])
+    pdfFilenames = askopenfilenames(title="Select the PDFs you want to merge", filetypes=[("PDFs", "*.pdf")])
 
     # Exit if only one PDF is selected
     if len(pdfFilenames) < 2:
@@ -28,7 +28,7 @@ def mergePdfs(pdfFilenames):
 
 # Save PDF to selected directory
 def savePdf(pdf): 
-    saveNameLoc = asksaveasfilename(defaultextension=".pdf")
+    saveNameLoc = asksaveasfilename(title="Select the save location and name of the merged PDF", defaultextension=".pdf")
     pdf.save(saveNameLoc)
 
 if __name__ == "__main__":

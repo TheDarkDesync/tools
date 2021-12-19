@@ -6,7 +6,7 @@ import sys
 # Select the PDF from files & check 
 def selectPdf():
     Tk().withdraw()
-    pdfFilename = askopenfilename(filetype=[("PDF", "*.pdf")])
+    pdfFilename = askopenfilename(title="Select the PDF you want to split", filetype=[("PDF", "*.pdf")])
 
     # Exit if none is selected
     if len(pdfFilename) < 1:
@@ -16,7 +16,7 @@ def selectPdf():
 
 # Split the PDF into the individual pages as PDFs
 def splitPdf(pdfFilename):
-    saveLoc = askdirectory()
+    saveLoc = askdirectory(title="Select the save location for the splited PDFs")
     name = pdfFilename.split("/")[-1].split(".")[0]
     pdfFile = Pdf.open(pdfFilename)
     for n, page in enumerate(pdfFile.pages):

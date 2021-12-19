@@ -6,7 +6,7 @@ from PIL import Image
 # Select imgs from files & check 
 def selectFiles():
     Tk().withdraw()
-    imgFilenames = askopenfilenames(title='select', filetypes=[("image", ".jpeg"),("image", ".png"),("image", ".jpg")])
+    imgFilenames = askopenfilenames(title="Select the image(s) you want to convert to PDF", filetypes=[("image", ".jpeg"),("image", ".png"),("image", ".jpg")])
 
     # Exit if only one PDF is selected
     if len(imgFilenames) < 1:
@@ -23,6 +23,6 @@ def imgToPdf(imgFilename, saveLoc):
     
 if __name__ == "__main__":
     imgFilenames = selectFiles()
-    saveLoc = askdirectory()
+    saveLoc = askdirectory(title="Select the save location of the PDF(s)")
     for imgFilename in imgFilenames:
         imgToPdf(imgFilename, saveLoc)
