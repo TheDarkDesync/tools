@@ -10,7 +10,8 @@ def selectPdf():
 
     # Exit if none is selected
     if len(pdfFilename) < 1:
-        sys.exit("You have not selected a PDF... Can not split")
+        # sys.exit("You have not selected a PDF... Can not split")
+        raise RuntimeError
         
     return pdfFilename
 

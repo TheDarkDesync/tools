@@ -8,8 +8,8 @@ def imageExtractorFunc():
     try:
         pdfFilename = extractimgfrompdf.selectPdf()
         extractimgfrompdf.extractImages(pdfFilename)
-    except:
-        print("Error: imageExtractorFunc")
+    except RuntimeError:
+        print("Failed to select PDF")
 
 def imgToPdfFunc():
     try:
@@ -17,31 +17,35 @@ def imgToPdfFunc():
         saveLoc = imgtopdf.askdirectory(title="Select the save location of the PDF(s)")
         for imgFilename in imgFilenames:
             imgtopdf.imgToPdf(imgFilename, saveLoc)
-    except:
-        print("Error: imgToPdfFunc")
+    except RuntimeError:
+        print("Failed to select image(s)")
+    except PermissionError:
+        print("Failed to save PDF(s)")
 
 def pdfMergerFunc():
     try:
         pdfs = pdfmerger.selectPdfs()
         mergedPdf = pdfmerger.mergePdfs(pdfs)
         pdfmerger.savePdf(mergedPdf)
-    except:
-        print("Error: pdfMergerFunc")
+    except ValueError:
+        print("Failed to save merged PDF")
+    except RuntimeError:
+        print("Failed to select image(s)")
 
 def pdfSplitterFunc():
     try:
         pdf = pdfsplitter.selectPdf()
         pdfsplitter.splitPdf(pdf)
-    except:
-        print("Error: pdfSplitterFunc")
+    except RuntimeError:
+        print("Failed to select PDF")
+    except PermissionError:
+        print("Failed to save PDF(s)")
 
 def spongeTextFunc():
-    try:
-        text = spongetext.textFromClipboard()
-        spongedText = spongetext.spongeTheText(text)
-        spongetext.textToClipboard(spongedText)
-    except:
-        print("Error: spongeTextFunc")
+    text = spongetext.textFromClipboard()
+    spongedText = spongetext.spongeTheText(text)
+    spongetext.textToClipboard(spongedText)
+
         
 def helpFunc():
     help = Tk()

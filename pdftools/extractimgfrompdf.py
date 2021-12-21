@@ -11,7 +11,8 @@ def selectPdf():
 
     # Exit if none is selected
     if len(pdfFilename) < 1:
-        sys.exit("You have not selected a PDF... Can not extract images")
+        # sys.exit("You have not selected a PDF... Can not extract images")
+        raise RuntimeError
         
     return pdfFilename
 

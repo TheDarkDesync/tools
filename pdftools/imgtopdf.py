@@ -10,7 +10,8 @@ def selectImages():
 
     # Exit if only one PDF is selected
     if len(imgFilenames) < 1:
-        sys.exit("You have not selected a image... Can not create PDF(s")
+        # sys.exit("You have not selected a image... Can not create PDF(s")
+        raise RuntimeError
         
     return imgFilenames
 
