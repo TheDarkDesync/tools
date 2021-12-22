@@ -4,7 +4,7 @@ from shutil import copy2, move # preserves timestamp
 from tkinter import Tk
 from tkinter.filedialog import askdirectory
 
-from util.path import get_unique_path
+from .util import get_unique_path
 
 def merge_dir(src: str, dst: str, copy: bool = False, depth: int = 0) -> None:
     '''
@@ -22,8 +22,6 @@ def merge_dir(src: str, dst: str, copy: bool = False, depth: int = 0) -> None:
 
     # scnd argument: default
     directories, filenames = next(walker, (None, [], []))[1:]
-
-    print(directories, '\n\n\n', filenames)
 
     for dir in directories:
         path = join(src, dir)

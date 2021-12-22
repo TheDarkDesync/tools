@@ -6,3 +6,6 @@
 .pdf
 
 __pycache__/
+
+# virtual environment
+env/
