@@ -9,3 +9,8 @@ __pycache__/
 
 # virtual environment
 env/
+
+# PyInstaller
+build/
+dist/
+*.exe.spec
