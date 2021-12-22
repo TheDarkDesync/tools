@@ -45,7 +45,7 @@ def pdfSplitterFunc():
     except PermissionError:
         print("Failed to save PDF(s)")
 
-def directoryMergeFunc(root: Tk):
+def directoryMergeFunc():
     src = askdirectory(title='Select directoy which contents you want to merge')
     dst = askdirectory(title='Select directoy where you want to merge')
     copy = askyesno('Copy instead of move?', 'Copy instead of move?')
@@ -92,7 +92,7 @@ if __name__ == "__main__":
     Button(text="Image-To-PDF", command=lambda: imgToPdfFunc(), border=0, activebackground="#13233a", activeforeground="#d1e6ff", background="#afb5bb", cursor="hand2").pack(side="top", fill="x", padx="10", pady="10")
     Button(text="PDF-Merger", command=lambda: pdfMergerFunc(), border=0, activebackground="#13233a", activeforeground="#d1e6ff", background="#afb5bb", cursor="hand2").pack(side="top", fill="x", padx="10", pady="10")
     Button(text="PDF-Splitter", command=lambda: pdfSplitterFunc(), border=0, activebackground="#13233a", activeforeground="#d1e6ff", background="#afb5bb", cursor="hand2").pack(side="top", fill="x", padx="10", pady="10")
-    Button(text="Directory Merger", command=lambda: directoryMergeFunc(root), border=0, activebackground="#13233a", activeforeground="#d1e6ff", background="#afb5bb", cursor="hand2").pack(side="top", fill="x", padx="10", pady="10")
+    Button(text="Directory Merger", command=lambda: directoryMergeFunc(), border=0, activebackground="#13233a", activeforeground="#d1e6ff", background="#afb5bb", cursor="hand2").pack(side="top", fill="x", padx="10", pady="10")
     Button(text="Sponge-Text", command=lambda: spongeTextFunc(), border=0, activebackground="#13233a", activeforeground="#d1e6ff", background="#afb5bb", cursor="hand2").pack(side="top", fill="x", padx="10", pady="10")
     Button(text="Help", command=lambda: helpFunc(), border=0, activebackground="#7f8387", activeforeground="#eef3ff", background="#eef3ff", cursor="hand2").pack(side="right", padx="10", pady="10")
     Button(text="Quit Toolbox", command=lambda: root.quit(), background="#da3633", activebackground="#8d2321", border=0, cursor="hand2").pack(side="left", padx="10", pady="10")
