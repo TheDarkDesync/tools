@@ -48,9 +48,9 @@ def pdfSplitterFunc():
 def directoryMergeFunc():
     src = askdirectory(title='Select directoy which contents you want to merge')
     dst = askdirectory(title='Select directoy where you want to merge')
-    copy = askyesno('Copy instead of move?', 'Copy instead of move?')
+    move = askyesno('Move instead of copy?', 'Move instead of copy?')
     rec = askinteger('Recursion Depth?', 'Recursion Depth?')
-    directorymerge.merge_dir(src, dst, copy, rec)
+    directorymerge.merge_dir(src, dst, move, rec)
 
 def spongeTextFunc():
     text = spongetext.textFromClipboard()
