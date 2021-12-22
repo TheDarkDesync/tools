@@ -52,7 +52,6 @@ def directoryMergeFunc():
     rec = askinteger('Recursion Depth?', 'Recursion Depth?')
     directorymerge.merge_dir(src, dst, copy, rec)
 
-
 def spongeTextFunc():
     text = spongetext.textFromClipboard()
     spongedText = spongetext.spongeTheText(text)
@@ -77,7 +76,10 @@ def helpFunc():
         Converts selected images to PDFs and saves them to your desired location.
 
         Extract Images from PDF
-        Extracts all images from the selected PDF and saves them to your desired location.""", background="#0d1117", foreground="#c9d1d9", font="SauceCodePro 12", justify="left"
+        Extracts all images from the selected PDF and saves them to your desired location.
+        
+        Directory Merger
+        Merges directories by moving/copying contents from first selected directory with specified depth to the second selected directory""", background="#0d1117", foreground="#c9d1d9", font="SauceCodePro 12", justify="left"
     ).pack(side="top", fill="x", padx="2", pady="10")
     Button(help, text="Close Help", command=lambda: help.destroy(), background="#da3633", activebackground="#8d2321", border=0, cursor="hand2").pack(side="left", padx="10", pady="10")
 
