@@ -1,8 +1,9 @@
 from os import walk
 from os.path import join
-from shutil import copy2, move # preserves timestamp
+from shutil import copy2, move as move2 # preserves timestamp
 from tkinter import Tk
 from tkinter.filedialog import askdirectory
+from re import match
 
 from util.path import get_unique_path
 
@@ -18,6 +19,9 @@ def merge_dir(src: str, dst: str, move: bool = False, depth: int = 0) -> None:
     (default=0, only first subdirectories)
     '''
 
+    # no nesting
+    if match(src + '.+', dst): return
+
     walker = walk(src) # files and directories
 
     # scnd argument: default
@@ -32,7 +36,7 @@ def merge_dir(src: str, dst: str, move: bool = False, depth: int = 0) -> None:
         src_path = join(src, file)
         dst_path = get_unique_path(dst, file)
         try:
-            move(src_path, dst_path) if move else copy2(src_path, dst_path)
+            move2(src_path, dst_path) if move else copy2(src_path, dst_path)
         except IOError:
             print(f'Couldn\'t write to {dst}')
             return
